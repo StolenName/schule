@@ -1,1 +1,1 @@
-# schule
+# Repository für Programmieraufgabe von der Schule.
