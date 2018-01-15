@@ -1,0 +1,107 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+string eingKnelt, eingNopelt, eingManuselt, eingLoepst, aStamm;
+bool bKnelt, bNopelt, bManuselt, bLoepst;
+
+
+int main(int argc, char *argv[])
+{	
+
+	// Ganz Wichtige fragen
+	cout << "Besitzen die Bewohner einen Knelt? \n";
+    cout << "Eingabe: Ja: 'j' oder Nein: 'n' \n";
+    cin >> eingKnelt; 
+ 
+    if(eingKnelt=="j"|eingKnelt=="J"){
+    	bKnelt = true;
+    }else{
+    	bKnelt = false;
+    }
+    
+    cout << endl << endl << endl;
+    system("cls");
+
+    cout << "Nopeln die Bewohner? \n";
+    cout << "Eingabe: Ja: 'j' oder Nein: 'n' \n";
+    cin >> eingNopelt; 
+ 
+    if(eingNopelt=="j"|eingNopelt=="J"){
+    	bNopelt = true;
+    }else{
+    	bNopelt = false;
+    }
+
+    cout << endl << endl << endl;
+    system("cls");
+    
+    cout << "Manuseln die Bewohner? \n";
+    cout << "Eingabe: Ja: 'j' oder Nein: 'n' \n";
+    cin >> eingManuselt; 
+ 
+    if(eingManuselt=="j"|eingManuselt=="J"){
+    	bManuselt = true;
+    }else{
+    	bManuselt = false;
+    }
+    
+    cout << endl << endl << endl;
+    system("cls");
+    
+    cout << "Loepsen die Bewohner? \n";
+    cout << "Eingabe: Ja: 'j' oder Nein: 'n' \n";
+    cin >> eingLoepst; 
+ 
+    if(eingLoepst=="j"|eingLoepst=="J"){
+    	bLoepst = true;
+    }else{
+    	bLoepst = false;
+    }
+    
+    cout << endl << endl << endl;
+    system("cls");
+    cin.get();
+    
+    // Sehr Wichtige Analyse
+    
+    if(bKnelt){
+    	if(bManuselt){
+    		aStamm = "Assis";
+    	}else{
+    		if(bNopelt){
+    			aStamm = "Drudi";
+    		}else{
+    			aStamm = "Cedi";
+    		}
+    	}
+    }else{
+    	if(bNopelt){
+    		aStamm = "Bela";
+    	}else{
+    		if(bLoepst){
+    			if(bManuselt){
+    				aStamm = "Cedi";
+    			}else{
+    				aStamm = "Drudi";
+    			}
+    		}else{
+    			if(bManuselt){
+    				aStamm = "Drudi";
+    			}else{
+    				aStamm = "Cedi";
+    			}
+    		}
+    	}
+    }
+
+    // Ausgabe der Sehr Wichtigen Analyse
+    system("cls");
+    
+    cout << "Laut den angegeben beschreibungen handelt es sich um den " << aStamm << " Stamm.";
+    
+    cout << endl << endl << "Press the enter key to continue ...";
+    cin.get();
+    return EXIT_SUCCESS;
+}
