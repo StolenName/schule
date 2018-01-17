@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
+#include <time.h>
 #include "funktionenHBFI2017.h"
 
 /*
@@ -19,12 +20,41 @@ string ToLower(string wort){
 	return wort;
 }
 
+void FUNCTION(string FUNCT){
+	string With;
+	for (int i = 0; i < 12; i++)
+	{
+		cout<<"|";
+		if (i==0||i==11)
+		{
+			for (int u = 0; u < FUNCT.length()+2; u++)
+			{
+				cout<<"-";
+			}
+		}
+		else if (i==1||i==10){
+			cout<<" "<<FUNCT<<" ";
+		}
+        else{
+            for (int u = 0; u < FUNCT.length()+2; u++){
+	            	/*char c;
+					srand( (unsigned int) time(NULL)+i*(u+1));
+					c = (rand() % 100) + 'a';
+    				cout<<c;*/
+    				cout<<" ";
+    			}	
+        }
+		cout<<"|"<<endl;
+
+	}
+}
+
 int main(int argc, char *argv[])
 {
 	string AuswahlVar;
 	bool inAuswahl;
 	string VariablenL[14];
-	string Variablen[14] = {"Array Sotieren","Aufprallgeschwindigkeit","Volumen Quader","Oberflaeche Quader","Volumen Kugel","Oberflaeche Kugel","Volumen Pyramide","Oberflaeche Pyramide","Volumen Zylinder","Oberflaeche Zylinder","Momentanwert zweier sinusspannungen","Dezimal in Binaer","Wert Anuuitaetendarlehens","Nullstellen"};
+	string Variablen[14] = {"Array Sortieren","Aufprallgeschwindigkeit","Volumen Quader","Oberflaeche Quader","Volumen Kugel","Oberflaeche Kugel","Volumen Pyramide","Oberflaeche Pyramide","Volumen Zylinder","Oberflaeche Zylinder","Momentanwert zweier sinusspannungen","Dezimal in Binaer","Wert Anuuitaetendarlehens","Nullstellen"};
 	string Beschreibung[14] = {
 		"Sortieren eines eindimansionalen Arrays",
 		"Berechnung der Aufprallgeschwindigkeit nach einem freien Fall",
@@ -42,7 +72,7 @@ int main(int argc, char *argv[])
 		"Bestimmung der Nullstellen eines Polynoms zweiten Grades"
 	};
 	//Abfrage welches option gewaehlt wird.
-	cout<<"Bitte wählen Sie eine Rechenmethode aus und geben diese ein und mit [EINGABE] bestaetigen\nZur auswahl stehen:\n";
+	cout<<"Bitte waehlen Sie eine Rechenmethode aus und geben diese ein und mit [EINGABE] bestaetigen\nZur auswahl stehen:\n";
 
 		
 	for (int i = 0; i < sizeof(Variablen)/sizeof(Variablen[0]); i++){
@@ -60,74 +90,75 @@ int main(int argc, char *argv[])
 	//	cin.get();
 		inAuswahl = true;
 		if (ToLower(AuswahlVar) == ToLower(Variablen[0])){
-		//Array Sotieren
+		//Array Sortieren
 			inAuswahl = false;
-			cout<<version();
+			//cout<<"FUNCTION_ARRAY-SORTIEREN"<<endl;
+			FUNCTION("FUNCTION_ARRAY-SORTIEREN");
 		}
 			else if (ToLower(AuswahlVar) == ToLower(Variablen[1])){
-			//Aufprallgeschwindigkeit
+			//Aufprallgeschwindigkeite
 				inAuswahl = false;
-				/* code */
+				FUNCTION("FUNCTION_AUFPRALLGESCHWINDIGKEIT");
 			}
 				else if (ToLower(AuswahlVar) == ToLower(Variablen[2])){
 				//Volumen Quader
 					inAuswahl = false;
-					/* code */
+					FUNCTION("FUNCTION_VOLUMEN-QUADER");
 				}
 					else if (ToLower(AuswahlVar) == ToLower(Variablen[3])){
 					//Oberflaeche Quader
 						inAuswahl = false;
-						/* code */
+						FUNCTION("FUNCTION_OBERFLAECHE-QUADER");
 					}
 						else if (ToLower(AuswahlVar) == ToLower(Variablen[4])){
 						//Volumen Kugel
 							inAuswahl = false;
-							/* code */
+							FUNCTION("FUNCTION_VOLUMEN-KUGEL");
 						}
 							else if (ToLower(AuswahlVar) == ToLower(Variablen[5])){
 							//Oberflaeche Kugel
 								inAuswahl = false;
-								/* code */
+								FUNCTION("FUNCTION_OBERFLAECHE-KUGEL");
 							}
 								else if (ToLower(AuswahlVar) == ToLower(Variablen[6])){
 								//Volumen Pyramide
 									inAuswahl = false;
-									/* code */
+									FUNCTION("FUNCTION_VOLUMEN-PYRAMIDE");
 								}
 									else if (ToLower(AuswahlVar) == ToLower(Variablen[7])){
 									//Oberflaeche Pyramide
 										inAuswahl = false;
-										/* code */
+										FUNCTION("FUNCTION_OBERFLAECHE-PYRAMIDE");
 									}
 										else if (ToLower(AuswahlVar) == ToLower(Variablen[8])){
 										//Volumen Zylinder
 											inAuswahl = false;
-											/* code */
+											FUNCTION("FUNCTION_VOLUMEN-ZYLINDER");
 										}
 											else if (ToLower(AuswahlVar) == ToLower(Variablen[9])){
 											//Oberflaeche Zylinder
 												inAuswahl = false;
-												/* code */
+												FUNCTION("FUNCTION_OBERFLAECHE-ZYLINDER");
 											}
 												else if (ToLower(AuswahlVar) == ToLower(Variablen[10])){
 												//Momentanwert zweier sinusspannungen
 													inAuswahl = false;
-													/* code */
+													FUNCTION("FUNCTION_SINUSSPANNUNGEN");
 												}
 													else if (ToLower(AuswahlVar) == ToLower(Variablen[11])){
 													//Dezimal in Binaer
 														inAuswahl = false;
-														/* code */
+														FUNCTION("FUNCTION_DEC-BIN");
 													}
 														else if (ToLower(AuswahlVar) == ToLower(Variablen[12])){
 														//Wert Anuuitaetendarlehens
 															inAuswahl = false;
-															/* code */
+															FUNCTION("FUNCTION_ANUUITAETENDARLEHEN");
 														}
 															else if (ToLower(AuswahlVar) == ToLower(Variablen[13])){
 															//Nullstellen
 																inAuswahl = false;
-																/* code */
+																FUNCTION("FUNCTION_NULLSTELLEN");
 															}
 																else if (AuswahlVar.empty()){
 																//Leere eingabe
