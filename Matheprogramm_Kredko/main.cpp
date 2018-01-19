@@ -8,11 +8,10 @@
 /*
 	TODO:
 	Variablen einbinden/-bauen
-	//Gro√ü kleinschreibung ignorieren
+	//Groﬂ kleinschreibung ignorieren
 	Benutzer Freundlicher
-
-
 */
+
 using namespace std;
 
 string ToLower(string wort){
@@ -53,7 +52,7 @@ int main(int argc, char *argv[])
 {
 	string AuswahlVar;
 	bool inAuswahl;
-	string VariablenL[14];
+	
 	string Variablen[14] = {"Array Sortieren","Aufprallgeschwindigkeit","Volumen Quader","Oberflaeche Quader","Volumen Kugel","Oberflaeche Kugel","Volumen Pyramide","Oberflaeche Pyramide","Volumen Zylinder","Oberflaeche Zylinder","Momentanwert zweier sinusspannungen","Dezimal in Binaer","Wert Anuuitaetendarlehens","Nullstellen"};
 	string Beschreibung[14] = {
 		"Sortieren eines eindimansionalen Arrays",
@@ -178,7 +177,7 @@ int main(int argc, char *argv[])
 																		
 																	}
 																		else{
-																			cout<<AuswahlVar<<" konnt nicht gefunden werden.\n"<<endl;
+																			cout<<AuswahlVar<<" konnte nicht gefunden werden.\n"<<endl;
 																		}
 
 	} while (inAuswahl);
