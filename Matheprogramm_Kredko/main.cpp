@@ -2,7 +2,6 @@
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
-#include <time.h>
 #include "funktionenHBFI2017.h"
 
 /*
@@ -10,6 +9,10 @@
 	Variablen einbinden/-bauen
 	//Groﬂ kleinschreibung ignorieren
 	Benutzer Freundlicher
+
+	Done:
+	Added Array Sortieren
+
 */
 
 using namespace std;
@@ -86,75 +89,110 @@ int main(int argc, char *argv[])
 	cout<<endl;
 	do{
 		getline(cin,AuswahlVar);
+		AuswahlVar = ToLower(AuswahlVar);
 	//	cin.get();
 		inAuswahl = true;
-		if (ToLower(AuswahlVar) == ToLower(Variablen[0])){
+		if (AuswahlVar == ToLower(Variablen[0])){
 		//Array Sortieren
 			inAuswahl = false;
 			//cout<<"FUNCTION_ARRAY-SORTIEREN"<<endl;
-			FUNCTION("FUNCTION_ARRAY-SORTIEREN");
+			//FUNCTION("FUNCTION_ARRAY-SORTIEREN");
+			cout<<"Sortieren eines integer Arrays"<<endl;
+			int ArrLenght;
+			system("cls");
+			cout<<"Eingabe wie lang des Arrays"<<endl;
+			cin>>ArrLenght;
+			int Array[ArrLenght];
+			for (int i = 0; i < ArrLenght; i++)
+			{
+				system("cls");
+				cout<<"Eingabe Zahl "<<i+1<<endl;
+				cin>>Array[i];
+			}
+			system("cls");
+			cout<<"Unsortiertes Array:\n";
+			for (int i = 0; i < ArrLenght; i++)
+			{
+				cout<<Array[i];
+				if (i<ArrLenght-1)
+				{
+					cout<<",";
+				}
+			}
+
+			ArraySort(ArrLenght,&Array[0]);
+			cout<<"\n\nSortiertes Array:\n";
+			for (int i = 0; i < ArrLenght; i++)
+			{
+				cout<<Array[i];
+				if (i<ArrLenght-1)
+				{
+					cout<<",";
+				}
+			}
+
 		}
-			else if (ToLower(AuswahlVar) == ToLower(Variablen[1])){
+			else if (AuswahlVar == ToLower(Variablen[1])){
 			//Aufprallgeschwindigkeite
 				inAuswahl = false;
 				FUNCTION("FUNCTION_AUFPRALLGESCHWINDIGKEIT");
 			}
-				else if (ToLower(AuswahlVar) == ToLower(Variablen[2])){
+				else if (AuswahlVar == ToLower(Variablen[2])){
 				//Volumen Quader
 					inAuswahl = false;
 					FUNCTION("FUNCTION_VOLUMEN-QUADER");
 				}
-					else if (ToLower(AuswahlVar) == ToLower(Variablen[3])){
+					else if (AuswahlVar == ToLower(Variablen[3])){
 					//Oberflaeche Quader
 						inAuswahl = false;
 						FUNCTION("FUNCTION_OBERFLAECHE-QUADER");
 					}
-						else if (ToLower(AuswahlVar) == ToLower(Variablen[4])){
+						else if (AuswahlVar == ToLower(Variablen[4])){
 						//Volumen Kugel
 							inAuswahl = false;
 							FUNCTION("FUNCTION_VOLUMEN-KUGEL");
 						}
-							else if (ToLower(AuswahlVar) == ToLower(Variablen[5])){
+							else if (AuswahlVar == ToLower(Variablen[5])){
 							//Oberflaeche Kugel
 								inAuswahl = false;
 								FUNCTION("FUNCTION_OBERFLAECHE-KUGEL");
 							}
-								else if (ToLower(AuswahlVar) == ToLower(Variablen[6])){
+								else if (AuswahlVar == ToLower(Variablen[6])){
 								//Volumen Pyramide
 									inAuswahl = false;
 									FUNCTION("FUNCTION_VOLUMEN-PYRAMIDE");
 								}
-									else if (ToLower(AuswahlVar) == ToLower(Variablen[7])){
+									else if (AuswahlVar == ToLower(Variablen[7])){
 									//Oberflaeche Pyramide
 										inAuswahl = false;
 										FUNCTION("FUNCTION_OBERFLAECHE-PYRAMIDE");
 									}
-										else if (ToLower(AuswahlVar) == ToLower(Variablen[8])){
+										else if (AuswahlVar == ToLower(Variablen[8])){
 										//Volumen Zylinder
 											inAuswahl = false;
 											FUNCTION("FUNCTION_VOLUMEN-ZYLINDER");
 										}
-											else if (ToLower(AuswahlVar) == ToLower(Variablen[9])){
+											else if (AuswahlVar == ToLower(Variablen[9])){
 											//Oberflaeche Zylinder
 												inAuswahl = false;
 												FUNCTION("FUNCTION_OBERFLAECHE-ZYLINDER");
 											}
-												else if (ToLower(AuswahlVar) == ToLower(Variablen[10])){
+												else if (AuswahlVar == ToLower(Variablen[10])){
 												//Momentanwert zweier sinusspannungen
 													inAuswahl = false;
 													FUNCTION("FUNCTION_SINUSSPANNUNGEN");
 												}
-													else if (ToLower(AuswahlVar) == ToLower(Variablen[11])){
+													else if (AuswahlVar == ToLower(Variablen[11])){
 													//Dezimal in Binaer
 														inAuswahl = false;
 														FUNCTION("FUNCTION_DEC-BIN");
 													}
-														else if (ToLower(AuswahlVar) == ToLower(Variablen[12])){
+														else if (AuswahlVar == ToLower(Variablen[12])){
 														//Wert Anuuitaetendarlehens
 															inAuswahl = false;
 															FUNCTION("FUNCTION_ANUUITAETENDARLEHEN");
 														}
-															else if (ToLower(AuswahlVar) == ToLower(Variablen[13])){
+															else if (AuswahlVar == ToLower(Variablen[13])){
 															//Nullstellen
 																inAuswahl = false;
 																FUNCTION("FUNCTION_NULLSTELLEN");
@@ -163,7 +201,7 @@ int main(int argc, char *argv[])
 																//Leere eingabe
 																	
 																}
-																	else if (ToLower(AuswahlVar) == "liste"){
+																	else if (AuswahlVar == "liste"){
 																	//Erneut drucken
 																		system("cls");
 																		for (int i = 0; i < sizeof(Variablen)/sizeof(Variablen[0]); i++){
