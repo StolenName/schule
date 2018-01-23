@@ -7,7 +7,7 @@
 /*
 	TODO:
 	Variablen einbinden/-bauen
-	//Groﬂ kleinschreibung ignorieren
+	//Gro?kleinschreibung ignorieren
 	Benutzer Freundlicher
 
 	Done:
@@ -54,9 +54,9 @@ void FUNCTION(string FUNCT){
 int main(int argc, char *argv[])
 {
 	string AuswahlVar;
-	bool inAuswahl;
+	bool inAuswahl,error;
 	
-	string Variablen[14] = {"Array Sortieren","Aufprallgeschwindigkeit","Volumen Quader","Oberflaeche Quader","Volumen Kugel","Oberflaeche Kugel","Volumen Pyramide","Oberflaeche Pyramide","Volumen Zylinder","Oberflaeche Zylinder","Momentanwert zweier sinusspannungen","Dezimal in Binaer","Wert Anuuitaetendarlehens","Nullstellen"};
+	string Variablen[14] = {"Array Sortieren","Aufprallgesch.","Volumen Quader","Oberflaeche Quader","Volumen Kugel","Oberflaeche Kugel","Volumen Pyramide","Oberflaeche Pyramide","Volumen Zylinder","Oberflaeche Zylinder","Momentanwert zweier sinusspannungen","Dezimal in Binaer","Wert Anuuitaetendarlehens","Nullstellen"};
 	string Beschreibung[14] = {
 		"Sortieren eines eindimansionalen Arrays",
 		"Berechnung der Aufprallgeschwindigkeit nach einem freien Fall",
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 	}
 
 
-	cout<<"\nListe erneut aufrufen mit: Liste"<<endl;
+	cout<<"\nListe erneut aufrufen mit: Liste\n";
 	for (int i = 0; i < 40; i++){
 		cout<<"-";
 	}
@@ -95,33 +95,50 @@ int main(int argc, char *argv[])
 		if (AuswahlVar == ToLower(Variablen[0])){
 		//Array Sortieren
 			inAuswahl = false;
+			
 			//cout<<"FUNCTION_ARRAY-SORTIEREN"<<endl;
 			//FUNCTION("FUNCTION_ARRAY-SORTIEREN");
-			cout<<"Sortieren eines integer Arrays"<<endl;
+			cout<<"Sortieren eines integer Arrays\n";
 			int ArrLenght;
 			system("cls");
-			cout<<"Eingabe wie lang des Arrays"<<endl;
-			cin>>ArrLenght;
+			cout<<"Eingabe wie lang des Arrays\n";
+			do{
+				error = false;
+				cin>>ArrLenght;
+				if(cin.fail()){
+					error = true;
+					cin.clear();
+					cin.ignore();
+					cout<<"Ungueltige eingabe!\n";
+				}
+			}while(error);
 			int Array[ArrLenght];
-			for (int i = 0; i < ArrLenght; i++)
-			{
+			for (int i = 0; i < ArrLenght; i++){
 				system("cls");
-				cout<<"Eingabe Zahl "<<i+1<<endl;
-				cin>>Array[i];
+				do{
+					error = false;
+					cout<<"Eingabe Zahl "<<i+1<<endl;
+					cin>>Array[i];
+					if(cin.fail()){
+						error = true;
+						cin.clear();
+						cin.ignore();
+						cout<<"Ungueltige eingabe!\n";
+					}
+				}while(error);
+				
 			}
 			system("cls");
 			cout<<"Unsortiertes Array:\n";
-			for (int i = 0; i < ArrLenght; i++)
-			{
+			for (int i = 0; i < ArrLenght; i++){
 				cout<<Array[i];
-				if (i<ArrLenght-1)
-				{
+				if (i<ArrLenght-1){
 					cout<<",";
 				}
 			}
 
 			ArraySort(ArrLenght,&Array[0]);
-			cout<<"\n\nSortiertes Array:\n";
+			cout<<"\n\nSortiertes array:\n";
 			for (int i = 0; i < ArrLenght; i++)
 			{
 				cout<<Array[i];
@@ -135,7 +152,24 @@ int main(int argc, char *argv[])
 			else if (AuswahlVar == ToLower(Variablen[1])){
 			//Aufprallgeschwindigkeite
 				inAuswahl = false;
-				FUNCTION("FUNCTION_AUFPRALLGESCHWINDIGKEIT");
+				system("cls");
+				cout<<"Aufprallgeschwindigkeit nach einem freien Fall\n";
+				
+					double distance;
+					do{
+						error = false;
+						cout<<"Eingabe Fallhoehe.\n";
+						cin>>distance;
+						if(cin.fail()){
+							error = true;
+							cin.clear();
+							cin.ignore();
+							cout<<"Ungueltige eingabe!\n";
+						}
+					}while(error);
+					freierFall(distance,1);
+					
+				
 			}
 				else if (AuswahlVar == ToLower(Variablen[2])){
 				//Volumen Quader
