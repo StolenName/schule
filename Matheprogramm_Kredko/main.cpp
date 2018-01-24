@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <iomanip>
 #include "funktionenHBFI2017.h"
-
+ 
 /*
 	TODO:
 	Variablen einbinden/-bauen
