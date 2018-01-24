@@ -16,6 +16,46 @@
 */
 
 using namespace std;
+/*
+double z1,z2,z3,z4;
+double zSpeicher(string save,bool mode,double input){//mode:1 = input(unten), mode:0 = output(oben);
+	if (save.at(0) == ':')
+	{
+		if(mode){
+			if (save == ":z1"){
+				z1 = input;
+			}
+			else if(save == ":z2"){
+				z2 = input;
+			}
+			else if(save == ":z3"){
+				z3 = input;
+			}
+			else if(save == ":z4"){
+				z4 = input;
+			}
+		}
+		else{
+			if (save == ":z1"){
+				return z1;
+			}
+			else if(save == ":z2"){
+				return z2;
+			}
+			else if(save == ":z3"){
+				return z3;
+			}
+			else if(save == ":z4"){
+				return z4;
+			}
+		}
+	}
+	else{
+		return input;
+	}
+	
+	
+}*/
 
 string ToLower(string wort){
 	transform(wort.begin(), wort.end(), wort.begin(),::tolower);
@@ -234,23 +274,38 @@ int main(int argc, char *argv[])
 																else if (AuswahlVar.empty()){
 																//Leere eingabe
 																	
-																}
-																	else if (AuswahlVar == "liste"){
-																	//Erneut drucken
-																		system("cls");
-																		for (int i = 0; i < sizeof(Variablen)/sizeof(Variablen[0]); i++){
-																			cout<<"- "<<Variablen[i]<<endl;
-																		}
-																		cout<<"\nListe erneut aufrufen mit: Liste"<<endl;
-																		for (int i = 0; i < 40; i++){
-																			cout<<"-";
-																		}
-																		cout<<endl;
+																}/*
+																	else if (AuswahlVar == "test"){
+																		char input1[100],input2[100];
+																		char output1[100],output2[100];
 																		
-																	}
-																		else{
-																			cout<<AuswahlVar<<" konnte nicht gefunden werden.\n"<<endl;
+																		cin>>input1;
+																		string sinput1(input1);
+																		//cin>>input2;
+																		double summe=zSpeicher(sinput1,false,std::atoi(input1));
+																		cout<<summe<<endl;
+																		cin>>output1;
+																		string soutput1(output1);
+																		zSpeicher(soutput1,true,std::atoi(output1));
+
+																		
+																	}*/
+																		else if (AuswahlVar == "liste"){
+																		//Erneut drucken
+																			system("cls");
+																			for (int i = 0; i < sizeof(Variablen)/sizeof(Variablen[0]); i++){
+																				cout<<"- "<<Variablen[i]<<endl;
+																			}
+																			cout<<"\nListe erneut aufrufen mit: Liste"<<endl;
+																			for (int i = 0; i < 40; i++){
+																				cout<<"-";
+																			}
+																			cout<<endl;
+																			
 																		}
+																			else{
+																				cout<<AuswahlVar<<" konnte nicht gefunden werden.\n"<<endl;
+																			}
 
 	} while (inAuswahl);
 	cout<<endl;
