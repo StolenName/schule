@@ -1,7 +1,7 @@
 # Project: Matheprogramm_Kredko
 # Compiler: Default GCC compiler
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ IDE 7.4.2.569 on 24.01.18 16:59
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 25.01.18 09:17
 
 WXLIBNAME = wxmsw29u
 CPP       = g++.exe

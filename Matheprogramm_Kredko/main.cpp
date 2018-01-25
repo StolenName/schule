@@ -214,7 +214,20 @@ int main(int argc, char *argv[])
 				else if (AuswahlVar == ToLower(Variablen[2])){
 				//Volumen Quader
 					inAuswahl = false;
-					FUNCTION("FUNCTION_VOLUMEN-QUADER");
+					//FUNCTION("FUNCTION_VOLUMEN-QUADER");
+					int laenge,hoehe,breite,vq;
+					system("cls");
+					cout<<"Volumen eines Quaders\n";
+					cout<<"Eingabe Laenge:\n";
+					cin>>laenge;
+					cout<<"Eingabe Hoehe:\n";
+					cin>>hoehe;
+					cout<<"Eingabe Breite:\n";
+					cin>>breite;
+					vq = VolumenQuader(laenge,hoehe,breite);
+					cout<<"Das Volumen eines Quaders mit den Dimensinonen: "<<laenge<<"x"<<hoehe<<"x"<<breite<<" betraegt: "<<vq;
+				
+
 				}
 					else if (AuswahlVar == ToLower(Variablen[3])){
 					//Oberflaeche Quader
