@@ -12,5 +12,6 @@ void ArraySort (int length, int * address);
 void FUNKTION_PYRAMIDE(int hoehe, int breite, int leange);
 int quaderflaeche(int laenge, int breite, int hoehe);
 void Nullstellenberechnung (double a0, double a1, double a2);
+double zylinder_volumen(double hoehe, double radius);
 
 #endif
