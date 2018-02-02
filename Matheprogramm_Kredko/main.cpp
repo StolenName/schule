@@ -10,8 +10,7 @@
 	//Gro?kleinschreibung ignorieren
 	Benutzer Freundlicher
 
-	Done:
-	Added Array Sortieren
+	Rework ToDo list
 
 */
 
@@ -93,6 +92,8 @@ void FUNCTION(string FUNCT){
 
 int main(int argc, char *argv[])
 {
+	char hoch3 = 252;
+	char hoch2 = 253;
 	string AuswahlVar;
 	bool inAuswahl,error;
 	
@@ -215,24 +216,120 @@ int main(int argc, char *argv[])
 				//Volumen Quader
 					inAuswahl = false;
 					//FUNCTION("FUNCTION_VOLUMEN-QUADER");
+					//FIX!!
+					
 					int laenge,hoehe,breite,vq;
+					string einheit;
 					system("cls");
 					cout<<"Volumen eines Quaders\n";
-					cout<<"Eingabe Laenge:\n";
-					cin>>laenge;
-					cout<<"Eingabe Hoehe:\n";
-					cin>>hoehe;
-					cout<<"Eingabe Breite:\n";
-					cin>>breite;
+					do{
+						error = false;
+						cout<<"Eingabe Laenge:\n";
+						cin>>laenge;
+						if(cin.fail()){
+							error = true;
+							cin.clear();
+							cin.ignore();
+							cout<<"Ungueltige eingabe!\n";
+						}
+					}while(error);
+					do{
+						error = false;
+						cout<<"Eingabe Hoehe:\n";
+						cin>>hoehe;
+						if(cin.fail()){
+							error = true;
+							cin.clear();
+							cin.ignore();
+							cout<<"Ungueltige eingabe!\n";
+						}
+					}while(error);
+					do{
+						error = false;
+						cout<<"Eingabe Breite:\n";
+						cin>>breite;
+						if(cin.fail()){
+							error = true;
+							cin.clear();
+							cin.ignore();
+							cout<<"Ungueltige eingabe!\n";
+						}
+					}while(error);
+					do{
+							error = false;
+							cout<<"Eingabe Einheit: (km,m,mm,...)\n";
+							cin>>einheit;
+							if(cin.fail()){
+								error = true;
+								cin.clear();
+								cin.ignore();
+								cout<<"Ungueltige eingabe!\n";
+							}
+						}while(error);
+					
+					
 					vq = VolumenQuader(laenge,hoehe,breite);
-					cout<<"Das Volumen eines Quaders mit den Dimensinonen: "<<laenge<<"x"<<hoehe<<"x"<<breite<<" betraegt: "<<vq;
+					cout<<"Das Volumen eines Quaders mit den Dimensinonen: "<<laenge<<einheit<<"x"<<hoehe<<einheit<<"x"<<breite<<einheit<<" betraegt: "<<vq<<" "<<einheit<<hoch3;
 				
 
 				}
 					else if (AuswahlVar == ToLower(Variablen[3])){
 					//Oberflaeche Quader
 						inAuswahl = false;
-						FUNCTION("FUNCTION_OBERFLAECHE-QUADER");
+						//FUNCTION("FUNCTION_OBERFLAECHE-QUADER");
+						int laenge,hoehe,breite,oq;
+						string einheit;
+						system("cls");
+						cout<<"Volumen eines Quaders\n";
+						do{
+							error = false;
+							cout<<"Eingabe Laenge:\n";
+							cin>>laenge;
+							if(cin.fail()){
+								error = true;
+								cin.clear();
+								cin.ignore();
+								cout<<"Ungueltige eingabe!\n";
+							}
+						}while(error);
+						do{
+							error = false;
+							cout<<"Eingabe Hoehe:\n";
+							cin>>hoehe;
+							if(cin.fail()){
+								error = true;
+								cin.clear();
+								cin.ignore();
+								cout<<"Ungueltige eingabe!\n";
+							}
+						}while(error);
+						do{
+							error = false;
+							cout<<"Eingabe Breite:\n";
+							cin>>breite;
+							if(cin.fail()){
+								error = true;
+								cin.clear();
+								cin.ignore();
+								cout<<"Ungueltige eingabe!\n";
+							}
+						}while(error);
+						do{
+							error = false;
+							cout<<"Eingabe Einheit: (km,m,mm,...)\n";
+							cin>>einheit;
+							if(cin.fail()){
+								error = true;
+								cin.clear();
+								cin.ignore();
+								cout<<"Ungueltige eingabe!\n";
+							}
+						}while(error);
+						
+						
+						oq = quaderflaeche(laenge,breite,hoehe);
+						cout<<"Die Oberflaeche eines Quaders mit den Dimensinonen: "<<laenge<<einheit<<"x"<<hoehe<<einheit<<"x"<<breite<<einheit<<" betraegt: "<<oq<<" "<<einheit<<hoch2;
+
 					}
 						else if (AuswahlVar == ToLower(Variablen[4])){
 						//Volumen Kugel
@@ -242,22 +339,196 @@ int main(int argc, char *argv[])
 							else if (AuswahlVar == ToLower(Variablen[5])){
 							//Oberflaeche Kugel
 								inAuswahl = false;
-								FUNCTION("FUNCTION_OBERFLAECHE-KUGEL");
+								//FUNCTION("FUNCTION_OBERFLAECHE-KUGEL");
+								int radius;
+								string einheit;
+								system("cls");
+								do{
+									error = false;
+									cout<<"Eingabe Radius: \n";
+									cin>>radius;
+									if(cin.fail()){
+										error = true;
+										cin.clear();
+										cin.ignore();
+										cout<<"Ungueltige eingabe!\n";
+									}
+								}while(error);
+								/*do{
+									error = false;
+									cout<<"Eingabe Einheit: (km,m,mm,...)\n";
+									cin>>einheit;
+									if(cin.fail()){
+										error = true;
+										cin.clear();
+										cin.ignore();
+										cout<<"Ungueltige eingabe!\n";
+									}
+								}while(error);*/
+								oberflaecheberechnung(radius);
+								//cout<<"Die Oberflaeche einer Kugel mit dem Radius: "<<radius<<" betraegt: "<<ok<<" "<<einheit<<hoch2;
 							}
 								else if (AuswahlVar == ToLower(Variablen[6])){
 								//Volumen Pyramide
 									inAuswahl = false;
-									FUNCTION("FUNCTION_VOLUMEN-PYRAMIDE");
+									//FUNCTION("FUNCTION_VOLUMEN-PYRAMIDE");
+									int laenge,hoehe,breite,vp;
+									string einheit;
+									system("cls");
+									cout<<"Volumen einer Pyramide\n";
+									do{
+										error = false;
+										cout<<"Eingabe Laenge:\n";
+										cin>>laenge;
+										if(cin.fail()){
+											error = true;
+											cin.clear();
+											cin.ignore();
+											cout<<"Ungueltige eingabe!\n";
+										}
+									}while(error);
+									do{
+										error = false;
+										cout<<"Eingabe Hoehe:\n";
+										cin>>hoehe;
+										if(cin.fail()){
+											error = true;
+											cin.clear();
+											cin.ignore();
+											cout<<"Ungueltige eingabe!\n";
+										}
+									}while(error);
+									do{
+										error = false;
+										cout<<"Eingabe Breite:\n";
+										cin>>breite;
+										if(cin.fail()){
+											error = true;
+											cin.clear();
+											cin.ignore();
+											cout<<"Ungueltige eingabe!\n";
+										}
+									}while(error);
+									do{
+										error = false;
+										cout<<"Eingabe Einheit: (km,m,mm,...)\n";
+										cin>>einheit;
+										if(cin.fail()){
+											error = true;
+											cin.clear();
+											cin.ignore();
+											cout<<"Ungueltige eingabe!\n";
+										}
+									}while(error);
+									
+									
+									vp = Pyramidenvolumen(laenge,breite,hoehe);
+									//vp = ;
+									cout<<"Das Volumen einer Pyramide mit den Dimensinonen: "<<laenge<<einheit<<"x"<<hoehe<<einheit<<"x"<<breite<<einheit<<" betraegt: "<<vp<<" "<<einheit<<hoch3;
+
 								}
 									else if (AuswahlVar == ToLower(Variablen[7])){
 									//Oberflaeche Pyramide
 										inAuswahl = false;
-										FUNCTION("FUNCTION_OBERFLAECHE-PYRAMIDE");
+										//FUNCTION("FUNCTION_OBERFLAECHE-PYRAMIDE");
+										int laenge,hoehe,breite,vp;
+										string einheit;
+										system("cls");
+										cout<<"Volumen einer Pyramide\n";
+										do{
+											error = false;
+											cout<<"Eingabe Laenge:\n";
+											cin>>laenge;
+											if(cin.fail()){
+												error = true;
+												cin.clear();
+												cin.ignore();
+												cout<<"Ungueltige eingabe!\n";
+											}
+										}while(error);
+										do{
+											error = false;
+											cout<<"Eingabe Hoehe:\n";
+											cin>>hoehe;
+											if(cin.fail()){
+												error = true;
+												cin.clear();
+												cin.ignore();
+												cout<<"Ungueltige eingabe!\n";
+											}
+										}while(error);
+										do{
+											error = false;
+											cout<<"Eingabe Breite:\n";
+											cin>>breite;
+											if(cin.fail()){
+												error = true;
+												cin.clear();
+												cin.ignore();
+												cout<<"Ungueltige eingabe!\n";
+											}
+										}while(error);
+										/*do{
+											error = false;
+											cout<<"Eingabe Einheit: (km,m,mm,...)\n";
+											cin>>einheit;
+											if(cin.fail()){
+												error = true;
+												cin.clear();
+												cin.ignore();
+												cout<<"Ungueltige eingabe!\n";
+											}
+										}while(error);*/
+										FUNKTION_PYRAMIDE(hoehe,breite,laenge);
 									}
 										else if (AuswahlVar == ToLower(Variablen[8])){
 										//Volumen Zylinder
 											inAuswahl = false;
-											FUNCTION("FUNCTION_VOLUMEN-ZYLINDER");
+											//FUNCTION("FUNCTION_VOLUMEN-ZYLINDER");
+											int hoehe,radius,vz;
+											string einheit;
+											system("cls");
+											cout<<"Volumen eines Zylinders\n";
+											do{
+											error = false;
+											cout<<"Eingabe Hoehe:\n";
+											cin>>hoehe;
+											if(cin.fail()){
+												error = true;
+												cin.clear();
+												cin.ignore();
+												cout<<"Ungueltige eingabe!\n";
+											}
+											}while(error);
+											do{
+												error = false;
+												cout<<"Eingabe Radius:\n";
+												cin>>radius;
+												if(cin.fail()){
+													error = true;
+													cin.clear();
+													cin.ignore();
+													cout<<"Ungueltige eingabe!\n";
+												}
+											}while(error);
+											do{
+												error = false;
+												cout<<"Eingabe Einheit: (km,m,mm,...)\n";
+												cin>>einheit;
+												if(cin.fail()){
+													error = true;
+													cin.clear();
+													cin.ignore();
+													cout<<"Ungueltige eingabe!\n";
+												}
+											}while(error);
+										
+											cout<<"Das Volumen eines Zylinders mit den Dimensinonen: "<<hoehe<<einheit<<"x"<<radius<<" betraegt: "<<vz<<" "<<einheit<<hoch3;
+
+
+
+
+
 										}
 											else if (AuswahlVar == ToLower(Variablen[9])){
 											//Oberflaeche Zylinder
@@ -287,22 +558,13 @@ int main(int argc, char *argv[])
 																else if (AuswahlVar.empty()){
 																//Leere eingabe
 																	
-																}/*
+																}
 																	else if (AuswahlVar == "test"){
-																		char input1[100],input2[100];
-																		char output1[100],output2[100];
-																		
-																		cin>>input1;
-																		string sinput1(input1);
-																		//cin>>input2;
-																		double summe=zSpeicher(sinput1,false,std::atoi(input1));
-																		cout<<summe<<endl;
-																		cin>>output1;
-																		string soutput1(output1);
-																		zSpeicher(soutput1,true,std::atoi(output1));
+																		cout<<hoch3<<endl<<hoch2;
+                                                                        
 
 																		
-																	}*/
+																	}
 																		else if (AuswahlVar == "liste"){
 																		//Erneut drucken
 																			system("cls");
