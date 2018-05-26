@@ -1,1 +1,1 @@
-# Repository für Programmieraufgabe von der Schule.
+# Dead/Test Repository
